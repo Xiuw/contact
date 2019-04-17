@@ -15,7 +15,7 @@ app.get('/',(req,res)=>{
 const transport = {
 	service:"Gmail",
 	auth:{
-		user:process.env.MY_EMAIL,
+		user:"sylvi.xw@gmail.com",
 		pass:process.env.MY_PASSWORD
 	}
 }
@@ -37,7 +37,7 @@ app.post('/contact', (req, res)=>{
   let content = `name: ${name} \n email: ${email} \n message: ${message} `
   let mail = {
     from: name,
-    to: process.env.MY_EMAIL,
+    to:"sylvi.xw@gmail.com",
     subject: 'New Message from Contact Form',
     text: content
   }
