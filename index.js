@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser=require('body-parser');
 const cors = require('cors');
 
+
 const app =express();
 app.use(bodyParser.json());
 app.use(cors());
@@ -29,7 +30,7 @@ transporter.verify((error, success) => {
   }
 });
 
-app.post("/contact", (req, res)=>{
+app.post('/contact', (req, res)=>{
   console.log("I got here");
   const {name, email, message} = req.body;
   console.log(name);
