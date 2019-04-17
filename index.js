@@ -36,7 +36,7 @@ app.post("/contact", (req, res)=>{
   let content = `name: ${name} \n email: ${email} \n message: ${message} `
   let mail = {
     from: name,
-    to: process.env.myEmail,  //Change to email address that you want to receive messages on
+    to: process.env.myEmail, 
     subject: 'New Message from Contact Form',
     text: content
   }
