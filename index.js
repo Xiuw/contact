@@ -37,7 +37,11 @@ app.post('/contact', (req, res)=>{
   let content = `name: ${name} \n email: ${email} \n message: ${message} `
   let mail = {
     from: name,
+<<<<<<< HEAD
     to: process.env.MY_EMAIL,
+=======
+    to: process.env.myEmail, 
+>>>>>>> bb7e56ebe42e1bb08395993cf09539d684033682
     subject: 'New Message from Contact Form',
     text: content
   }
