@@ -8,9 +8,11 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const transport = {
-	service:"QQ",
+	service:"Gmail",
+  secureConnection:false,
+  port:587,
 	auth:{
-		user:"250613660@qq.com",
+		user:"sylvi.xw@gmail.com",
 		pass:process.env.PASSWORD
 	}
 }
