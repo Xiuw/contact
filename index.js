@@ -39,7 +39,7 @@ app.post('/contact', (req, res)=>{
   transporter.sendMail(mail, (err, data) => {
     if (err) {
       res.json({
-        msg: name
+        msg: 'fail'
       })
     } else {
       res.json({
