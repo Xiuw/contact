@@ -20,7 +20,6 @@ transporter.verify((error, success) => {
     console.log(error);
   } else {
     console.log('Server is ready to take messages');
-    res.send('Login')
   }
 });
 
