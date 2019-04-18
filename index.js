@@ -20,6 +20,7 @@ transporter.verify((error, success) => {
     console.log(error);
   } else {
     console.log('Server is ready to take messages');
+    res.send('Login')
   }
 });
 
@@ -36,7 +37,6 @@ app.post('/contact', (req, res)=>{
     subject: 'New Message from Contact Form',
     text: content
   }
-  res.send(mail);
   transporter.sendMail(mail, (err, data) => {
     res.send(mail);
     if (err) {
