@@ -2,15 +2,10 @@ const nodemailer = require('nodemailer');
 const express = require('express');
 const bodyParser=require('body-parser');
 const cors = require('cors');
-
-
 const app =express();
+
 app.use(bodyParser.json());
 app.use(cors());
-
-app.get('/',(req,res)=>{
-	res.send('It worked');
-})
 
 const transport = {
 	service:"Gmail",
@@ -19,9 +14,7 @@ const transport = {
 		pass:process.env.PASSWORD
 	}
 }
-
 const transporter = nodemailer.createTransport(transport)
-
 transporter.verify((error, success) => {
   if (error) {
     console.log(error);
@@ -29,6 +22,10 @@ transporter.verify((error, success) => {
     console.log('Server is ready to take messages');
   }
 });
+
+app.get('/',(req,res)=>{
+  res.send('It worked');
+})
 
 app.post('/contact', (req, res)=>{
   const {name, email, message} = req.body;
