@@ -37,7 +37,6 @@ app.post('/contact', (req, res)=>{
     text: content
   }
   transporter.sendMail(mail, (err, data) => {
-    res.send(mail);
     if (err) {
       res.json({
         msg: 'fail'
