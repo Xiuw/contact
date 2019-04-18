@@ -31,17 +31,16 @@ app.get('/',(req,res)=>{
 
 app.post('/contact', (req, res)=>{
   const {name, email, message} = req.body;
-  let content = `name: ${name} \n email: ${email} \n message: ${message} `
   let mail = {
-    from: name,
+    from: email,
     to:"sylvi.xw@gmail.com",
-    subject: 'New Message from Contact Form',
-    text: content
+    subject: `New Message from ${name}`,
+    text: message
   }
   transporter.sendMail(mail, (err, data) => {
     if (err) {
       res.json({
-        msg: 'fail'
+        msg: 'fail', mail
       })
     } else {
       res.json({
