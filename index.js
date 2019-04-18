@@ -16,7 +16,7 @@ const transport = {
 	service:"Gmail",
 	auth:{
 		user:"sylvi.xw@gmail.com",
-		pass:process.env.MY_PASSWORD
+		pass:process.env.PASSWORD
 	}
 }
 
@@ -31,9 +31,7 @@ transporter.verify((error, success) => {
 });
 
 app.post('/contact', (req, res)=>{
-  console.log("I got here");
   const {name, email, message} = req.body;
-  console.log(name);
   let content = `name: ${name} \n email: ${email} \n message: ${message} `
   let mail = {
     from: name,
