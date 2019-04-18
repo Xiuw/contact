@@ -8,8 +8,8 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const transport = {
+  service:'gmail',
 	host:'smtp.gmail.com',
-  secure:false,
   port:465,
 	auth:{
 		user:"sylvi.xw@gmail.com",
