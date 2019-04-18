@@ -10,7 +10,7 @@ app.use(cors());
 const transport = {
 	host:'smtp.gmail.com',
   secure:false,
-  port:587,
+  port:465,
 	auth:{
 		user:"sylvi.xw@gmail.com",
 		pass:process.env.PASSWORD
