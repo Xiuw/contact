@@ -32,15 +32,14 @@ app.get('/',(req,res)=>{
 app.post('/contact', (req, res)=>{
   const {name, email, message} = req.body;
   let mail = {
-    from: email,
     to:"sylvi.xw@gmail.com",
-    subject: `New Message from ${name}`,
+    subject: `New Message from ${name} - ${email}`,
     text: message
   }
   transporter.sendMail(mail, (err, data) => {
     if (err) {
       res.json({
-        msg: 'fail', mail
+        msg: 'fail'
       })
     } else {
       res.json({
