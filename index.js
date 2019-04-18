@@ -8,7 +8,9 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const transport = {
-	service:"Gmail",
+	host: 'smtp.gmail.com',
+  port: 465,
+  secure: true,
 	auth:{
 		user:"sylvi.xw@gmail.com",
 		pass:process.env.PASSWORD
