@@ -8,9 +8,9 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const transport = {
-  service:'QQ',
+  service:'gmail',
 	auth:{
-		user:"250613660@qq.com",
+		user:'sylvi.xw@gmail.com',
 		pass:process.env.PASSWORD
 	}
 }
@@ -29,12 +29,13 @@ app.get('/',(req,res)=>{
 
 app.post('/contact', (req, res)=>{
   const {name, email, message} = req.body;
-  let mailOption = {
+  let mailOptions = {
+    from:"sylvi.xw@gmail.com",
     to:"sylvi.xw@gmail.com",
     subject: `New Message from ${name} - ${email}`,
     text: message
   }
-  transporter.sendMail(mailOption, (err, data) => {
+  transporter.sendMail(mailOptions, (err, data) => {
     if (err) {
       res.json({
         msg: 'fail'
