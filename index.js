@@ -31,7 +31,7 @@ app.post('/contact', (req, res)=>{
   const {name, email, message} = req.body;
   let mailOptions = {
     from:"sylvi.xw@gmail.com",
-    to:"sylvi.xw@gmail.com",
+    to:"250613660@qq.com",
     subject: `New Message from ${name} - ${email}`,
     text: message
   }
@@ -49,5 +49,5 @@ app.post('/contact', (req, res)=>{
 })
 
 app.listen(process.env.PORT || 3000,()=>{
-	console.log(`Running on Port ${process.env.Port}`);
+	console.log(`Running on Port ${process.env.PORT}`);
 })
