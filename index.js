@@ -10,7 +10,7 @@ app.use(cors());
 const transport = {
   service:'gmail',
 	auth:{
-		user:'sylvi.xw@gmail.com',
+		user:'xiuneh@gmail.com',
 		pass:process.env.PASSWORD
 	}
 }
@@ -30,8 +30,8 @@ app.get('/',(req,res)=>{
 app.post('/contact', (req, res)=>{
   const {name, email, message} = req.body;
   let mailOptions = {
-    from:"sylvi.xw@gmail.com",
-    to:"250613660@qq.com",
+    from:"xiuneh.xw@gmail.com",
+    to:"sylvi.xw@gmail.com",
     subject: `New Message from ${name} - ${email}`,
     text: message
   }
