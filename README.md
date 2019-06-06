@@ -1,2 +1,2 @@
 # contact
-Send mail using Nodemailer
+Send email using Nodemailer
