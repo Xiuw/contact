@@ -5,17 +5,15 @@ const cors = require("cors");
 const app = express();
 
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({ origin: true }));
 
 const auth = {
   type: "OAuth2",
   user: "sylvi.xw@gmail.com",
-  clientId:
-    "1008859869282-0q2dd9i7iam02tpmul6otqu2gbmol8lk.apps.googleusercontent.com",
-  clientSecret: "bajzK4W14OcuJ2U_ucE1x6Ms",
-  refreshToken: "1/ddfxREeJDu-OHzmdjinV5b7yIeDaWcTx8Fd2HPKTkwg",
-  accessToken:
-    "ya29.GltcB6tTZ9NFf0TRmTfctMOiGGKyw_BD_4pJ3yMgIOjxUn-sRLW6z9FKxmqeQk1lu1UMLReNumoyFvQxMX3y0-NFhUTYvZqNs6jTlNHhj5KXGQ1Gxc8OqUPDPnc0"
+  clientId: process.env.ID,
+  clientSecret: process.env.SECRET,
+  refreshToken: process.env.REFRESH_TOKEN,
+  accessToken: process.env.ACCESSTOKEN
 };
 const transport = {
   service: "gmail",
